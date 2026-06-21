@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Link In Co - Week-ends d'exception à Rabat">
+    <title>Link In Co | Week-ends d'Exception - Rabat</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        
+        :root {
+            --violet-clair: #7c5ce7;
+            --violet-soft: #a78bfa;
+            --blanc-casse: #f8f4f0;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1585208798174-6cedd78a9d5c?q=80&w=2070') center/cover no-repeat;
+        }
+        .premium-btn {
+            background: linear-gradient(45deg, #7c5ce7, #a78bfa);
+            transition: all 0.4s;
+        }
+        .premium-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans bg-[#f8f4f0]">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <img src="logo.png" alt="Link In Co" class="h-20 w-auto">
+            <a href="https://wa.me/212713772297" target="_blank" 
+               class="flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-7 py-3.5 rounded-2xl font-medium transition">
+                <i class="fab fa-whatsapp text-3xl"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero min-h-screen flex items-center text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-8 text-center relative z-10">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 leading-tight" style="font-family: 'Playfair Display', serif;">
+                LINK IN CO
+            </h1>
+            <p class="text-4xl mb-8 text-violet-200">Week-ends d’Exception à Rabat</p>
+            <p class="text-2xl mb-12 max-w-3xl mx-auto">
+                Chaque vendredi & samedi — Networking, Aventures, Culture et Expériences uniques
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="https://www.linkinco.ma" target="_blank"
+                   class="premium-btn text-white px-16 py-8 rounded-3xl text-3xl font-semibold shadow-2xl flex items-center gap-4">
+                    <i class="fas fa-ticket-alt"></i>
+                    RÉSERVER MA PLACE
+                </a>
+                <div class="text-6xl font-bold text-amber-200">250 — 350 DH</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTIVITÉS DIVERSES -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-5xl font-bold text-center mb-6 text-[#7c5ce7]">Activités Diverses</h2>
+            <p class="text-center text-xl text-gray-600 mb-16">2 à 3 activités par week-end • Chaque week-end est unique</p>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-violet-200 hover:border-[#7c5ce7] transition">
+                    <div class="h-64 bg-gradient-to-br from-violet-600 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-utensils text-8xl text-white/90"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Dîners & Soirées Gourmandes</h3>
+                        <p class="text-gray-600">Buffet raffiné, musique live marocaine et ambiance conviviale.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-violet-200 hover:border-[#7c5ce7] transition">
+                    <div class="h-64 bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
+                        <i class="fas fa-hiking text-8xl text-white/90"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Randonnées & Nature</h3>
+                        <p class="text-gray-600">Moments de ressourcement en pleine nature marocaine.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-violet-200 hover:border-[#7c5ce7] transition">
+                    <div class="h-64 bg-gradient-to-br from-sky-600 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-ship text-8xl text-white/90"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Aventures & Sorties</h3>
+                        <p class="text-gray-600">Kayak, Yacht, Paintball, Karting et expériences uniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULAIRE -->
+    <section class="py-24 bg-[#f8f4f0]">
+        <div class="max-w-2xl mx-auto px-8">
+            <div class="bg-white p-12 rounded-3xl shadow-2xl">
+                <h2 class="text-4xl font-bold text-center mb-10 text-[#7c5ce7]">Réservez votre Week-end</h2>
+                <form action="https://formspree.io/f/mvzjpapz" method="POST" class="space-y-6">
+                    <input type="text" name="nom" placeholder="Nom complet *" required class="w-full px-8 py-6 border border-gray-300 rounded-3xl focus:border-[#7c5ce7]">
+                    <input type="tel" name="telephone" placeholder="Téléphone WhatsApp *" required class="w-full px-8 py-6 border border-gray-300 rounded-3xl focus:border-[#7c5ce7]">
+                    <input type="email" name="email" placeholder="Email" class="w-full px-8 py-6 border border-gray-300 rounded-3xl focus:border-[#7c5ce7]">
+                    <button type="submit" class="premium-btn w-full py-8 text-2xl font-semibold rounded-3xl text-white">CONFIRMER MA RÉSERVATION</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Flottant -->
+    <a href="https://wa.me/212713772297" target="_blank" 
+       class="fixed bottom-8 right-8 bg-[#25D366] text-white w-20 h-20 rounded-full flex items-center justify-center text-4xl shadow-2xl hover:scale-110 z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
