@@ -3,133 +3,841 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Link In Co - Week-ends d'exception à Rabat">
+    <meta name="description" content="Link In Co - Week-ends d'exception à Rabat — Networking, Aventures, Culture">
     <title>Link In Co | Week-ends d'Exception - Rabat</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="logo.png" type="image/png">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://alielfarkh-oss.github.io/Linkinco/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://alielfarkh-oss.github.io/Linkinco/logo.png">
+    <meta property="og:title" content="Link In Co — Week-ends d'Exception à Rabat">
+    <meta property="og:description" content="Chaque vendredi & samedi — Networking, Aventures, Culture. 250-350 DH. Rejoignez la communauté !">
+    <meta property="og:image" content="https://alielfarkh-oss.github.io/Linkinco/logo.png">
+    <meta property="og:url" content="https://events.linkinco.ma">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NQRRHGP9');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHJB5JJHEV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NHJB5JJHEV');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
-        
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
-            --violet-clair: #7c5ce7;
-            --violet-soft: #a78bfa;
-            --blanc-casse: #f8f4f0;
+            --marble-light: #f5f0ec;
+            --marble-mid: #ede6de;
+            --marble-dark: #d6cec4;
+            --purple-deep: #3b2d8a;
+            --purple-mid: #6c5ce7;
+            --purple-soft: #a29bfe;
+            --cyan: #00cec9;
+            --gold: #f9ca24;
+            --pink: #fd79a8;
+            --text-dark: #1a1a2e;
+            --text-mid: #444466;
+            --text-light: #888899;
+            --shadow-soft: 0 8px 40px rgba(100,80,200,0.12);
+            --shadow-card: 0 20px 60px rgba(60,40,150,0.18);
         }
-        
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--marble-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── HEADER ── */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg,rgba(250,248,245,0.97) 0%,rgba(235,228,220,0.97) 50%,rgba(220,210,200,0.97) 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(180,160,140,0.4);
+            box-shadow: 0 4px 30px rgba(100,80,60,0.08);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .logo-text-block { display: flex; flex-direction: column; }
+
+        .logo-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .logo-tagline {
+            font-size: 0.58rem;
+            color: var(--purple-mid);
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .header-wa {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #25D366;
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.35);
+        }
+
+        .header-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
+
+        /* ── URGENCY BANNER ── */
+        .urgency-banner {
+            position: fixed;
+            top: 72px;
+            left: 0; right: 0;
+            z-index: 999;
+            background: linear-gradient(135deg, #3b2d8a, #6c5ce7, #fd79a8);
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 20px rgba(108,92,231,0.4);
+        }
+
+        .urgency-text { font-size: 0.8rem; font-weight: 700; color: white; letter-spacing: 0.05em; text-align: center; }
+
+        .urgency-counter {
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 0.3rem 0.9rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .urgency-btn {
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            background: white;
+            color: var(--purple-deep);
+            font-size: 0.72rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+        }
+
+        .urgency-btn:hover { transform: scale(1.05); }
+
+        /* ── HERO ── */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1585208798174-6cedd78a9d5c?q=80&w=2070') center/cover no-repeat;
+            padding-top: 112px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
         }
-        .premium-btn {
-            background: linear-gradient(45deg, #7c5ce7, #a78bfa);
-            transition: all 0.4s;
+
+        .hero-video-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.22;
+            filter: brightness(0.7) saturate(1.4);
         }
-        .premium-btn:hover {
-            transform: translateY(-4px) scale(1.05);
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                rgba(245,240,236,0.85) 0%,
+                rgba(230,222,214,0.78) 40%,
+                rgba(210,200,230,0.72) 70%,
+                rgba(200,195,255,0.68) 100%);
+            z-index: 0;
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+        .orb1 { width:500px;height:500px;background:radial-gradient(circle,rgba(162,155,254,0.22) 0%,transparent 70%);top:80px;left:-100px; z-index:1;}
+        .orb2 { width:400px;height:400px;background:radial-gradient(circle,rgba(253,121,168,0.13) 0%,transparent 70%);top:120px;right:-80px; z-index:1;}
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--purple-mid);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .hero-eyebrow::before, .hero-eyebrow::after {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--purple-soft);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .accent {
+            background: linear-gradient(135deg, var(--purple-mid), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-price {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--purple-deep);
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-price span {
+            font-size: 0.5em;
+            color: var(--text-mid);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--purple-mid), var(--purple-deep));
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(108,92,231,0.4);
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(108,92,231,0.55); }
+
+        .btn-wa {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            background: #25D366;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(37,211,102,0.55); }
+
+        /* ── ACTIVITIES ── */
+        .activities-section {
+            background: white;
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .activities-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--purple-deep), var(--purple-mid), var(--pink), var(--cyan));
+        }
+
+        .section-eyebrow {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--purple-mid);
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-sub {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            text-align: center;
+            max-width: 520px;
+            margin: 0 auto 3.5rem;
+            line-height: 1.7;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .activity-card {
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--marble-light);
+            border: 1.5px solid var(--marble-dark);
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-card);
+            border-color: rgba(108,92,231,0.3);
+        }
+
+        .activity-img {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .activity-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            opacity: 0.15;
+        }
+
+        .img-purple { background: linear-gradient(135deg, #3b2d8a, #6c5ce7); }
+        .img-teal   { background: linear-gradient(135deg, #00b894, #00cec9); }
+        .img-blue   { background: linear-gradient(135deg, #0984e3, #74b9ff); }
+
+        .activity-body { padding: 1.8rem; }
+
+        .activity-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .activity-desc {
+            font-size: 0.82rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+        }
+
+        /* ── FORM SECTION ── */
+        .form-section {
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            padding: 3rem;
+            box-shadow: var(--shadow-card);
+            border: 1.5px solid rgba(162,155,254,0.2);
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-sub {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .form-group { margin-bottom: 1rem; }
+
+        .form-input {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border-radius: 14px;
+            border: 1.5px solid var(--marble-dark);
+            background: var(--marble-light);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus { border-color: var(--purple-mid); }
+        .form-input::placeholder { color: var(--text-light); }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.1rem;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #3b2d8a, #6c5ce7);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(108,92,231,0.4);
+            transition: all 0.25s ease;
+            margin-top: 0.5rem;
+        }
+
+        .form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(108,92,231,0.55); }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .success-icon { font-size: 4rem; margin-bottom: 1rem; display: block; }
+        .success-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--text-dark); margin-bottom: 0.6rem; }
+        .success-text  { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+
+        /* ── CTA BAND ── */
+        .cta-band {
+            background: linear-gradient(135deg, #1a1a2e, #2d2b5a);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cta-band::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,0.02) 12px,rgba(255,255,255,0.02) 13px);
+        }
+
+        .cta-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+        }
+        .co1 { width:300px;height:300px;background:radial-gradient(circle,rgba(108,92,231,0.25) 0%,transparent 70%);top:-80px;left:-60px; }
+        .co2 { width:250px;height:250px;background:radial-gradient(circle,rgba(253,121,168,0.15) 0%,transparent 70%);bottom:-60px;right:-40px; }
+
+        .cta-content { position: relative; z-index: 1; }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-sub {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #1a1a2e;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+        .footer-link { color: rgba(162,155,254,0.7); text-decoration: none; margin: 0 0.8rem; font-size: 0.72rem; }
+        .footer-link:hover { color: #a29bfe; }
+
+        /* ── WHATSAPP FLOAT ── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 1.5rem;
+            z-index: 1500;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 25px rgba(37,211,102,0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            animation: waPulse 2.5s ease-in-out infinite;
+        }
+
+        .whatsapp-float:hover { transform: scale(1.12); }
+
+        @keyframes waPulse {
+            0%,100% { box-shadow: 0 6px 25px rgba(37,211,102,0.5); }
+            50% { box-shadow: 0 6px 35px rgba(37,211,102,0.75), 0 0 0 8px rgba(37,211,102,0.15); }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .activities-grid { grid-template-columns: 1fr; }
+            .hero-price { font-size: 2rem; }
+            .form-card { padding: 2rem 1.5rem; }
+            .urgency-banner { flex-direction: column; gap: 0.5rem; padding: 0.8rem; }
         }
     </style>
 </head>
-<body class="font-sans bg-[#f8f4f0]">
+<body>
 
-    <!-- HEADER -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            <img src="logo.png" alt="Link In Co" class="h-20 w-auto">
-            <a href="https://wa.me/212713772297" target="_blank" 
-               class="flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-7 py-3.5 rounded-2xl font-medium transition">
-                <i class="fab fa-whatsapp text-3xl"></i>
-                <span>WhatsApp</span>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQRRHGP9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- URGENCY BANNER -->
+<div class="urgency-banner">
+    <span class="urgency-text">🔥 Chaque Vendredi & Samedi — Pack Événements Link In Co</span>
+    <span class="urgency-counter">🎟️ <span id="placesNum">31</span> places disponibles</span>
+    <a href="https://www.linkinco.ma" target="_blank" class="urgency-btn">Je réserve →</a>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <a class="logo" href="https://www.linkinco.ma">
+            <img src="https://alielfarkh-oss.github.io/Linkinco/logo.png" alt="Link In Co">
+            <div class="logo-text-block">
+                <span class="logo-name">LINK IN CO</span>
+                <span class="logo-tagline">La confiance est notre qualité</span>
+            </div>
+        </a>
+        <a href="https://wa.me/212713772297" target="_blank" class="header-wa">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp
+        </a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <video class="hero-video-bg" autoplay muted loop playsinline>
+        <source src="https://alielfarkh-oss.github.io/Linkinco/bg.mp4.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+
+    <div class="hero-content">
+        <p class="hero-eyebrow">Link In Co · Rabat · Maroc</p>
+
+        <h1 class="hero-title">
+            LINK IN CO<br>
+            <span class="accent">Week-ends d'Exception</span>
+        </h1>
+
+        <p class="hero-sub">
+            Chaque vendredi & samedi — Networking, Aventures, Culture et Expériences uniques à Rabat. Rejoignez une communauté qui transforme le week-end en tremplin de vie.
+        </p>
+
+        <div class="hero-price">
+            250 — 350 DH
+            <span>/ week-end complet ⭐ Remise couple</span>
+        </div>
+
+        <div class="hero-btns">
+            <a href="https://www.linkinco.ma" target="_blank" class="btn-primary">
+                <i class="fas fa-ticket-alt"></i>
+                RÉSERVER MA PLACE
+            </a>
+            <a href="https://wa.me/212713772297?text=Salam%2C%20je%20veux%20r%C3%A9server%20ma%20place%20pour%20l%27%C3%A9v%C3%A9nement%20Link%20In%20Co%20!" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i>
+                WHATSAPP
             </a>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- HERO -->
-    <section class="hero min-h-screen flex items-center text-white relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-8 text-center relative z-10">
-            <h1 class="text-6xl md:text-7xl font-bold mb-6 leading-tight" style="font-family: 'Playfair Display', serif;">
-                LINK IN CO
-            </h1>
-            <p class="text-4xl mb-8 text-violet-200">Week-ends d’Exception à Rabat</p>
-            <p class="text-2xl mb-12 max-w-3xl mx-auto">
-                Chaque vendredi & samedi — Networking, Aventures, Culture et Expériences uniques
-            </p>
-            
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="https://www.linkinco.ma" target="_blank"
-                   class="premium-btn text-white px-16 py-8 rounded-3xl text-3xl font-semibold shadow-2xl flex items-center gap-4">
-                    <i class="fas fa-ticket-alt"></i>
-                    RÉSERVER MA PLACE
-                </a>
-                <div class="text-6xl font-bold text-amber-200">250 — 350 DH</div>
+<!-- ACTIVITÉS -->
+<section class="activities-section">
+    <div>
+        <p class="section-eyebrow">Le Programme</p>
+        <h2 class="section-title">Activités Diverses</h2>
+        <p class="section-sub">2 à 3 activités par week-end · Chaque week-end est unique · Jamais la même formule</p>
+
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div class="activity-img img-purple">🎶</div>
+                <div class="activity-body">
+                    <h3 class="activity-title">Dîners & Soirées Gourmandes</h3>
+                    <p class="activity-desc">Buffet raffiné, musique live marocaine (Gnawa, Issawa, Chaabi) et ambiance conviviale chaque vendredi soir.</p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ACTIVITÉS DIVERSES -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="text-5xl font-bold text-center mb-6 text-[#7c5ce7]">Activités Diverses</h2>
-            <p class="text-center text-xl text-gray-600 mb-16">2 à 3 activités par week-end • Chaque week-end est unique</p>
-            
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-violet-200 hover:border-[#7c5ce7] transition">
-                    <div class="h-64 bg-gradient-to-br from-violet-600 to-purple-600 flex items-center justify-center">
-                        <i class="fas fa-utensils text-8xl text-white/90"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3">Dîners & Soirées Gourmandes</h3>
-                        <p class="text-gray-600">Buffet raffiné, musique live marocaine et ambiance conviviale.</p>
-                    </div>
+            <div class="activity-card">
+                <div class="activity-img img-teal">🌿</div>
+                <div class="activity-body">
+                    <h3 class="activity-title">Randonnées & Nature</h3>
+                    <p class="activity-desc">Moments de ressourcement en pleine nature marocaine, fermes, zoo et visites guidées uniques.</p>
                 </div>
-                
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-violet-200 hover:border-[#7c5ce7] transition">
-                    <div class="h-64 bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
-                        <i class="fas fa-hiking text-8xl text-white/90"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3">Randonnées & Nature</h3>
-                        <p class="text-gray-600">Moments de ressourcement en pleine nature marocaine.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-violet-200 hover:border-[#7c5ce7] transition">
-                    <div class="h-64 bg-gradient-to-br from-sky-600 to-blue-600 flex items-center justify-center">
-                        <i class="fas fa-ship text-8xl text-white/90"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3">Aventures & Sorties</h3>
-                        <p class="text-gray-600">Kayak, Yacht, Paintball, Karting et expériences uniques.</p>
-                    </div>
+            </div>
+
+            <div class="activity-card">
+                <div class="activity-img img-blue">🛶</div>
+                <div class="activity-body">
+                    <h3 class="activity-title">Aventures & Sorties</h3>
+                    <p class="activity-desc">Kayak, Yacht, Paintball, Karting et expériences uniques sur la Marina Bouregreg et ses environs.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FORMULAIRE -->
-    <section class="py-24 bg-[#f8f4f0]">
-        <div class="max-w-2xl mx-auto px-8">
-            <div class="bg-white p-12 rounded-3xl shadow-2xl">
-                <h2 class="text-4xl font-bold text-center mb-10 text-[#7c5ce7]">Réservez votre Week-end</h2>
-                <form action="https://formspree.io/f/mvzjpapz" method="POST" class="space-y-6">
-                    <input type="text" name="nom" placeholder="Nom complet *" required class="w-full px-8 py-6 border border-gray-300 rounded-3xl focus:border-[#7c5ce7]">
-                    <input type="tel" name="telephone" placeholder="Téléphone WhatsApp *" required class="w-full px-8 py-6 border border-gray-300 rounded-3xl focus:border-[#7c5ce7]">
-                    <input type="email" name="email" placeholder="Email" class="w-full px-8 py-6 border border-gray-300 rounded-3xl focus:border-[#7c5ce7]">
-                    <button type="submit" class="premium-btn w-full py-8 text-2xl font-semibold rounded-3xl text-white">CONFIRMER MA RÉSERVATION</button>
-                </form>
-            </div>
+<!-- FORM -->
+<section class="form-section">
+    <div class="form-card">
+        <h2 class="form-title">Réservez votre Week-end</h2>
+        <p class="form-sub">Notre équipe vous contacte sur WhatsApp sous 24h pour confirmer votre place.</p>
+
+        <div id="formFields">
+            <form action="https://formspree.io/f/mvzjpapz" method="POST" id="landingForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <input type="text" name="nom" placeholder="Nom complet *" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="telephone" placeholder="Téléphone WhatsApp *" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email (optionnel)" class="form-input">
+                </div>
+                <input type="hidden" name="_subject" value="[LEAD EVENTS] Réservation Link In Co">
+                <button type="submit" class="form-submit">🚀 CONFIRMER MA RÉSERVATION</button>
+            </form>
         </div>
-    </section>
 
-    <!-- WhatsApp Flottant -->
-    <a href="https://wa.me/212713772297" target="_blank" 
-       class="fixed bottom-8 right-8 bg-[#25D366] text-white w-20 h-20 rounded-full flex items-center justify-center text-4xl shadow-2xl hover:scale-110 z-50">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        <div class="form-success" id="formSuccess">
+            <span class="success-icon">✅</span>
+            <h3 class="success-title">Réservation Confirmée !</h3>
+            <p class="success-text">Notre équipe vous contactera sur WhatsApp sous 24h pour confirmer votre place et vous donner tous les détails.</p>
+        </div>
+    </div>
+</section>
 
+<!-- CTA BAND -->
+<div class="cta-band">
+    <div class="cta-orb co1"></div>
+    <div class="cta-orb co2"></div>
+    <div class="cta-content">
+        <h2 class="cta-title">Découvrez l'écosystème complet</h2>
+        <p class="cta-sub">Les événements ne sont que la porte d'entrée. Voyages 3.0, Formation, Networking Business — tout vous attend sur linkinco.ma</p>
+        <a href="https://www.linkinco.ma" target="_blank" class="btn-primary" style="display:inline-flex;">
+            Voir le site complet →
+        </a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p style="margin-bottom:0.8rem;">
+        <a href="https://www.linkinco.ma" class="footer-link">linkinco.ma</a>
+        <a href="mailto:Linkinco.ecom@outlook.com" class="footer-link">Contact</a>
+        <a href="https://wa.me/212713772297" class="footer-link">WhatsApp</a>
+    </p>
+    <p class="footer-copy">© 2026 Link-in Co — Tous droits réservés · Agdal, Rabat, Maroc</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp-float" href="https://wa.me/212713772297?text=Salam%2C%20je%20veux%20r%C3%A9server%20ma%20place%20pour%20l%27%C3%A9v%C3%A9nement%20Link%20In%20Co%20!" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+/* ── PLACES COUNTER ── */
+(function() {
+    const el = document.getElementById('placesNum');
+    if (!el) return;
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+    let decrease = 0;
+    if (day === 1) decrease = Math.floor(hour / 6);
+    if (day === 2) decrease = 2 + Math.floor(hour / 5);
+    if (day === 3) decrease = 5 + Math.floor(hour / 4);
+    if (day === 4) decrease = 9 + Math.floor(hour / 3);
+    if (day === 5) decrease = Math.min(18, 14 + Math.floor(hour / 2));
+    el.textContent = Math.max(8, 31 - decrease);
+})();
+
+/* ── FORM SUBMIT ── */
+async function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('landingForm');
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = '⏳ Envoi en cours...';
+    btn.disabled = true;
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+            document.getElementById('formFields').style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+        } else {
+            btn.textContent = '🚀 CONFIRMER MA RÉSERVATION';
+            btn.disabled = false;
+            alert('Erreur — réessayez ou contactez-nous sur WhatsApp.');
+        }
+    } catch {
+        btn.textContent = '🚀 CONFIRMER MA RÉSERVATION';
+        btn.disabled = false;
+        alert('Connexion échouée — contactez-nous sur WhatsApp au 07 13 77 22 97.');
+    }
+}
+</script>
 </body>
 </html>
