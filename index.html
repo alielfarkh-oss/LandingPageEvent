@@ -701,8 +701,89 @@
             .travel-img { height: 260px; }
             .hero-price { font-size: 2rem; }
             .form-card { padding: 2rem 1.5rem; }
-            .urgency-banner { flex-direction: column; gap: 0.5rem; padding: 0.8rem; }
-            .hero-highlight { padding: 1rem 1.5rem; font-size: 1rem; }
+            
+            /* Correction Urgency Banner Mobile */
+            .urgency-banner { 
+                flex-direction: column; 
+                gap: 0.5rem; 
+                padding: 0.8rem;
+                position: relative;
+                top: 0;
+            }
+            
+            /* Ajustement Header pour mobile */
+            header {
+                position: relative;
+            }
+            
+            /* Correction Hero Mobile */
+            .hero {
+                padding-top: 2rem;
+                min-height: auto;
+            }
+            
+            .hero-content {
+                padding: 1.5rem 1rem;
+            }
+            
+            .hero-highlight { 
+                padding: 1rem 1.5rem; 
+                font-size: 1rem;
+                margin: 1.5rem auto;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero-sub {
+                font-size: 1.05rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 1rem;
+            }
+            
+            .btn-primary, .btn-wa {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .urgency-text {
+                font-size: 0.75rem;
+                text-align: center;
+            }
+            
+            .urgency-counter {
+                font-size: 0.7rem;
+            }
+            
+            .urgency-btn {
+                font-size: 0.7rem;
+                padding: 0.4rem 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            
+            .hero-price {
+                font-size: 1.75rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .travel-img {
+                height: 240px;
+            }
         }
     </style>
 </head>
